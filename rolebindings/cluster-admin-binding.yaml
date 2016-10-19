@@ -1,0 +1,12 @@
+# This role binding allows users to access everything except secrets. It is meant to be a full cluster admin role minus secrets
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1alpha1
+metadata:
+  name: cluster-admin-binding
+subjects:
+  - kind: User
+    name: "yourusername"
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin-all
+  apiVersion: rbac.authorization.k8s.io/v1alpha1

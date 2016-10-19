@@ -19,3 +19,4 @@ kubectl apply -f roles/
 kubectl apply -f rolebindings/
 ```
 
+PLEASE NOTE: The role bindings for the kubelet are specific to the kubeadm generated certs. The user names and groups come from the CNs in the certificates. If you are using a manually installed cluster or KOPS cluster you will just need to read the x509 certs. 

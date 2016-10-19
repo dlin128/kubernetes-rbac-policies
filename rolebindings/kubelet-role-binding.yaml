@@ -1,11 +1,13 @@
-# This cluster role binding allows anyone in the "manager" group to read secrets in any namespace.
+#PLEASE NOTE THESE BINDINGS ARE SPECIFIC TO THE KUBEADM GENERATED CERTIFICATES THAT ARE USED FOR AUTHENTICATION
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1alpha1
 metadata:
   name: kubelet-role-binding
 subjects:
   - kind: User
-    name: kubelet
+    name: "kubernetes-admin"
+  - kind: Group
+    name: "system:nodes"
 roleRef:
   kind: ClusterRole
   name: kubelet-runtime
