@@ -4,20 +4,22 @@ kind: ClusterRole
 metadata:
   name: kube-proxy-role
 rules:
-  -
-    apiGroups:
+  - apiGroups:
       - ""
-    nonResourceURLs: ["*"]
+    nonResourceURLs: []
     resources:
       - endpoints
       - events
       - services
       - nodes
     verbs: ["get", "watch", "list"]
-  -
-    apiGroups:
-      - ""
+  - apiGroups: []
     nonResourceURLs: ["*"]
+    resources: []
+    verbs: ["get"]
+  - apiGroups:
+      - ""
+    nonResourceURLs: []
     resources:
       - events
     verbs: ["*"]

@@ -4,8 +4,11 @@ kind: ClusterRole
 metadata:
   name: cluster-read-all
 rules:
-  -
-    apiGroups:
+  - apiGroups: []
+    nonResourceURLs: ["*"]
+    resources: []
+    verbs: ["get"]
+  - apiGroups:
       - ""
       - apps
       - autoscaling
@@ -13,7 +16,7 @@ rules:
       - extensions
       - policy
       - rbac.authorization.k8s.io
-    nonResourceURLs: ["*"]
+    nonResourceURLs: []
     resources:
     # everything except secrets
       - componentstatuses

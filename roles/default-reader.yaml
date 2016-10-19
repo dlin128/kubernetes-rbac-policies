@@ -4,6 +4,10 @@ metadata:
   # "namespace" omitted since ClusterRoles are not namespaced.
   name: default-reader
 rules:
+  - apiGroups: []
+    nonResourceURLs: ["*"]
+    resources: []
+    verbs: ["get"]
   - apiGroups: [""]
     resources:
       - componentstatuses
@@ -15,4 +19,4 @@ rules:
       - resourcequotas
       - services
     verbs: ["get", "watch", "list"]
-    nonResourceURLs: ["*"]
+    nonResourceURLs: []

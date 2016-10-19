@@ -5,8 +5,7 @@ metadata:
   name: healthz-reader-role
 rules:
   -
-    apiGroups:
-      - ""
+    apiGroups: []
     nonResourceURLs: ["*"]
     resources: []
     verbs: ["get"]

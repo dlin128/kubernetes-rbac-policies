@@ -6,7 +6,7 @@ metadata:
 rules:
   - apiGroups:
       - ""
-    nonResourceURLs: ["*"]
+    nonResourceURLs: []
     resources:
       - configmaps
       - persistentvolumes
@@ -14,10 +14,21 @@ rules:
       - secrets
       - services
       - healthz
+      - namespaces
     verbs: ["get", "watch", "list"]
+  - apiGroups: []
+    nonResourceURLs: ["*"]
+    resources: []
+    verbs: ["get"]
   - apiGroups:
       - ""
-    nonResourceURLs: ["*"]
+      - apps
+      - autoscaling
+      - batch
+      - extensions
+      - policy
+      - rbac.authorization.k8s.io
+    nonResourceURLs: []
     resources:
       - events
       - nodes
